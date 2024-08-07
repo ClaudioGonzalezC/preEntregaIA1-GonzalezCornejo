@@ -1,0 +1,89 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header__busqueda {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: v.$transparencia;
+    backdrop-filter: v.$blur;
+    padding: 30px;
+    border-radius: v.$border-radius;
+    max-width: 500px;
+    row-gap: 10px;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.container__input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+
+.item1 {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.item2 {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.item3 {
+    grid-column: span 2;
+}
+
+input#pais, select#ciudad, label {
+    font-size: v.$h3;
+    color: v.$negro;
+    font-weight: v.$bold;
+}
+
+input#pais, select#ciudad {
+    max-width: 230px;
+    width: 100%;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.valor__adicional p {
+    font-size: v.$h3;
+    color: v.$negro;
+    font-weight: v.$bold;
+}
+
+#resultado {
+    font-size: v.$h3;
+    color: v.$negro;
+    font-weight: v.$bold;
+}
+
+.header__busqueda button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: v.$amarillo;
+    color: v.$negro;
+    font-size: v.$p14;
+    cursor: pointer;
+    border-radius: v.$border-buttom;
+    margin-bottom:2em;
+}
+.header__busqueda button:hover {
+    background-color: v.$amarillo-hover;
+}

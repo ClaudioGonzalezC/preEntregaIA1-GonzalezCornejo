@@ -1,0 +1,191 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Header ***/
+header {
+    background: url('https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/background-header.webp');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    margin:0;
+    padding:0 13.5em 1.5em;
+    @include m.tablet {
+        padding:0 4.5em 1.5em!important;
+    }
+    @include m.telefono {
+        padding:0 2em 1.5em!important;
+    }
+    @include m.telefono-s {
+        padding:0px .8em 1.5em!important;
+    }
+}
+.header__contenido {
+    display: grid;
+    align-items: center;
+    padding: 5em 0 .5em;
+    @include m.tablet {
+        gap:v.$espacio;
+        justify-content:unset;
+    }
+
+    .header__content {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        @include m.tablet {
+            display:grid;
+            grid-template-columns: 2fr 1fr;
+        }
+        @include m.telefono-s {
+            align-items: center;
+        }           
+    
+        .header__configuracion {
+        
+            .menu {
+
+                ul.menu__ul {
+                    display: flex;
+                    align-items: center;
+                    column-gap:20px;
+                    @include m.tablet {
+                        justify-content: end;
+                    }
+
+                    li.menu__ul__li-perfil,li.menu__ul__li-setup {
+                        color: v.$blanco;
+                        font-size:1.4em;
+                        letter-spacing: .9px;
+                    }    
+
+                    .menu__ul__li--ubicacion  {
+                        color: v.$blanco;
+                        font-size:1.4em;
+                        letter-spacing: .9px;
+                        display:flex;
+                        align-items:center;
+                        column-gap:.3em;
+                        @include m.tablet {
+                            display:none;
+                        }
+                        
+                        p.ubicacion {
+                            display: inline-block;
+                            color: v.$blanco;
+                        }
+                        i.icono-ubicacion {
+                            display: none;
+                            margin-left: 5px;
+                            font-size:1.2em;
+                        }
+                    }
+                    .menu__ul__li-notificaciones  {
+                        color: v.$blanco;
+                        font-size:1.4em;
+                        letter-spacing: .9px;
+                        display:flex;
+                        align-items:center;
+                        column-gap:.3em;
+                        
+                        i.icono-notificaciones {
+                            display: none;
+                            margin-left: 5px;
+                            font-size:1.2em;
+                        }
+                    }
+                    .menu__ul__li-perfil  {
+                        
+                        .photo__perfil {
+                            display: grid;
+                            max-width:4em;
+                            height:auto;
+                        }
+                        .photo__perfil img, .nombreUsuario {
+                            margin-top:.5em;
+                        }
+                        img {
+                            border-radius: v.$border-buttom;
+                            max-width:3.1em;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        ul.submenu-perfil {
+                            border-radius:v.$border-radius-mini;
+                            min-width:165px;
+                            left: -245px;
+                            top: 73px;
+
+                            li {
+
+                                a:hover {
+                                    border-radius: 12px;
+                                    background-color: rgba(255,255,255,.04);
+                                }
+                            }
+                        }
+                    }
+                    .menu__ul__li-setup {
+                        position: relative;
+
+                        ul.submenu-setup {
+                            position:absolute;
+                            border-radius:v.$border-radius-mini;
+                            min-width:245px;
+                            left:-245px;
+                            top:25px;
+
+                            li {
+
+                                a:hover {
+                                    border-radius: 12px;
+                                    background-color: rgba(255,255,255,.04);
+                                }
+                            }
+                        }
+                    }
+                    .menu__ul__li-notificaciones {
+                        position: relative;
+
+                        ul.submenu-notificaciones {
+                            position:absolute;
+                            border-radius:v.$border-radius-mini;
+                            min-width:250px;
+                            left:-223px;
+                            top:25px;
+
+                            li {
+                                display: block;
+                                padding: 10px 20px;
+                                color: #fff;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+                i {
+                    font-size:1.7em;
+                }
+            }
+        }
+    }
+}
+.header__social {
+    display: grid;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .5em 0 1em;
+    @include m.tablet {
+        gap:v.$espacio;
+        justify-content:unset;
+    }
+    @media (max-width:432px) {
+        overflow-x: scroll;
+        scrollbar-width: none; 
+        div {
+            min-width:8.2em;
+        }
+    }
+    .header__content--social {
+        overflow: hidden;
+    }
+}

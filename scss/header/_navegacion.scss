@@ -1,0 +1,52 @@
+@use '../base/variables' as v;
+
+/*** Navegacion ***/
+.header__logo h1 {
+    font-family: v.$fuente_principal;
+    font-size:4.1em;
+    color: v.$blanco;
+    margin:0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li { 
+    float: left;
+    position: relative;
+
+    a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.menu ul ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    border-top: 1px solid #666;
+    z-index: 1000;
+}
+
+.menu ul ul li {
+    width: 100%;
+}
+
+.menu ul ul li a {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.menu ul ul li a:hover {
+    background-color: #666;
+}
+
+.show {
+    display: block !important;
+}

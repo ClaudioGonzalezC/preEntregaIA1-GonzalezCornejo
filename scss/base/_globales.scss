@@ -1,0 +1,24 @@
+// Necesitaré llamados a variables por lo que debo agregar:
+@use 'variables' as v;
+
+/*** Globales ***/
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Outfit:wght@100..900&display=swap');
+html {
+    font-size:62.5%;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+*,*::before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    display: block;
+}

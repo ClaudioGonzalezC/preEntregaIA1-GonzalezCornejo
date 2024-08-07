@@ -1,0 +1,163 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Presupuesto / Equipaje ***/
+.equipaje-presupuesto {
+    @include m.tablet {
+        padding:0 2em;
+    }
+    @include m.telefono {
+        padding:0 1.5em;
+    }
+    .contenedor__equipaje-presupuesto {
+        max-width:1640px;
+        width:100%;
+        margin:1em auto 0;
+        padding: 0 0 6em;
+        column-gap:2em;
+        @include m.column-2;
+        @include m.tablet {
+            @include m.column-1;
+        }
+        
+        .contenedor__equipaje {
+            .equipaje__titulos {
+                display:flex;
+                column-gap: 2em;
+                align-items: center;
+                width:100%;
+                margin:0 auto;
+                padding: 0;
+
+                h2 {
+                    letter-spacing: .07em;
+                    font-weight: v.$bold;
+                    color: v.$negro;
+                    font-size: v.$h2;
+                }
+                a {
+                    color:v.$negro;
+                    text-decoration: underline;
+                    font-size:v.$h4;
+                }
+            }
+            .contenido__equipaje {
+                border:.14em solid v.$blanco-hover;
+                border-radius: v.$border-radius;
+                padding:1.6em;
+
+                .equipaje {
+                    width:100%;
+                    column-gap:2em;
+                    @include m.column-2;
+                    @include m.telefono {
+                        @include m.column-1-grid;
+                        gap:v.$espacio;
+                    }
+
+                    .equipaje__primer {
+                        background-color:v.$celeste;
+                    }
+                    .equipaje__segundo {    
+                        background-color:v.$amarillo-s;
+                    }
+                    .equipaje__primer, .equipaje__segundo {
+                        border-radius: v.$border-radius;
+                        position:relative;
+
+                        img {
+                            border-radius: v.$border-radius;
+                        }
+                        .equipaje__info {
+                            position: absolute;
+                            bottom:15px;
+                            left:25px;
+
+                            h3 {
+                                font-size:v.$h3;
+                                font-weight:v.$bold;
+                                color:v.$negro;
+                            }
+                            .equipaje__tag {
+                                display:flex;
+                                column-gap:1.6em;
+                                color:v.$negro;
+
+                                span {
+                                    background-color:v.$blanco;
+                                    font-size:v.$parrafo;
+                                    padding:.4em 1em;
+                                    border-radius:v.$border-radius-mini;
+                                    color:v.$negro;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contenedor__presupuesto {
+            .presupuesto__titulos {
+                display:flex;
+                column-gap: 2em;
+                align-items: center;
+                width:100%;
+                margin:0 auto;
+                padding: 0;
+
+                h2 {
+                    letter-spacing: .07em;
+                    font-weight: v.$bold;
+                    color: v.$negro;
+                    font-size: v.$h2;
+                }
+                a {
+                    color:v.$negro;
+                    text-decoration: underline;
+                    font-size:v.$h4;
+                }
+            }
+            .contenido__presupuesto {
+                border:.14em solid v.$blanco-hover;
+                border-radius: v.$border-radius;
+                padding:1.6em;
+
+                .presupuesto {
+                    width:100%;
+                    column-gap:2em;
+                    @include m.column-2;
+                    @include m.telefono {
+                        @include m.column-1-grid;
+                        gap:v.$espacio;
+                    }
+
+                    .presupuesto__primer {
+                        background-color:v.$morado;
+                    }
+                    .presupuesto__segundo {
+                        background-color:v.$verde;
+                    }
+                    .presupuesto__primer, .presupuesto__segundo {
+                        border-radius: v.$border-radius;
+                        position:relative;
+
+                        img {
+                            border-radius: v.$border-radius;
+                        }
+                        .presupuesto__info {
+                            position: absolute;
+                            bottom:15px;
+                            left:25px;
+
+                            h3 {
+                                font-size:v.$h3;
+                                font-weight:v.$bold;
+                                color:v.$negro;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

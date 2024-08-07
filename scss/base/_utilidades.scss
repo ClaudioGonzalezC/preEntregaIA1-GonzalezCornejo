@@ -1,0 +1,26 @@
+// Necesitaré llamados a variables por lo que debo agregar:
+@use 'variables' as v;
+@use 'mixins' as m;
+
+/*** Utilidades ***/
+.container {
+    width: 100%;
+    max-width: 2000px;
+    padding: 0px;
+    margin: 0px auto;
+}
+section[class^="section__"] {
+    max-width: 2000px;
+    width:100%;
+    margin: 0 auto;
+    padding:0;
+    @include m.tablet {
+        padding:0 2em;
+    }
+    @include m.telefono {
+        padding:0 1.5em;
+    }
+}
+.text-center {
+    text-align:center;
+}

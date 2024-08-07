@@ -1,0 +1,41 @@
+@use '../base/variables' as v;
+
+/*** Stories ***/
+.header__social {
+    display: flex;
+    column-gap:1.2em;
+
+    div {
+        a {
+            text-decoration: none;
+
+            .destinos__cards {
+                text-align: center;
+
+                img {
+                    max-width: 5.7em;
+                    margin: 0 auto;
+                }
+                .social--active {
+                    border: 2px solid v.$amarillo;
+                    border-radius: 4.5em;
+                    padding: 5px;
+                }
+                p.destinos__titulos {
+                    font-weight: v.$bold;
+                    color: v.$blanco;
+                    font-size: v.$parrafo;
+                    letter-spacing: .15em;
+                    margin: .7em 0 0;
+                }
+                p.destinos__lugares {
+                    color: v.$blanco;
+                    font-size: v.$parrafo;
+                    letter-spacing: .15em;
+                    margin: .1em 0 0;
+                    font-weight: v.$regular;
+                }
+            }
+        }
+    }
+}

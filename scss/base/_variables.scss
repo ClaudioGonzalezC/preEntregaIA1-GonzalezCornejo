@@ -1,0 +1,60 @@
+/*** Variables ***/
+/* Fuentes */
+$logo: "Blinker", sans-serif;
+$fuente_principal: "Outfit", sans-serif;
+$h2: 2.4em;
+$p22: 2.2em;
+$h3: 1.6em;
+$h4: 1.5em;
+$p14: 1.4em;
+$h5: 1.2em;
+$parrafo: 1.2em;
+$regular: 200;
+$bold: 400;
+
+/* Media queries */
+$telefono-s: 425px;
+$telefono: 580px;
+$tablet: 768px;
+$desktop: 1024px;
+
+/* Colores */
+$negro: #363636;
+$gris-l: #707070;
+$gris: #9B9B9B;
+$gris-m:#cbc9c7;
+$gris-s: #E2E2E2;
+$gris-xs:#EEEEEE;
+$blanco: #fff;
+$blanco-hover: #E5E5E5;
+$amarillo: #F7DE94;
+$amarillo-hover:#eecc6a;
+$violeta: #793EFA;
+$transparencia: rgba(255,255,255,.5);
+$transparencia-m: rgba(84,96,92,.3);
+$transparencia-s: rgba(255,255,255,.3);
+$transparencia-xs:rgba(231,236,239,1);
+$rosa: #F8A9CC;
+$rosa-hover:#e385ae;
+$morado: #BFBBDC;
+$morado-hover: #a29cd0;
+$celeste: #A8DCFE;
+$celeste-hover:#7ac5f6;
+$verde: #B4DDCF;
+$verde-hover:#91cfba;
+$verde-xl:#2DF236;
+$naranjo: #F2BFAA;
+$naranjo-hover:#eda384;
+$amarillo-s: #FBDE89;
+$amarillo-s-hover:#fbd35e;
+
+
+/* Unidades */
+$border-radius-mini: 12px;
+$border-radius: 18px;
+$border-radius-search: 78px;
+$border-buttom: 32px;
+$espacio: 16px;
+
+/* Utilidades */
+$blur: blur(4px);

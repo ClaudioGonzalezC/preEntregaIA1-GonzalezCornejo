@@ -1,0 +1,101 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Timeline  ***/
+.section__timeline {
+
+    .timeline__titulos {
+        display:flex;
+        column-gap: 2em;
+        align-items: center;
+        max-width:1640px;
+        width:100%;
+        margin:0 auto;
+        padding: 6em 0 0;
+        
+        h2 {
+            letter-spacing: .07em;
+            font-weight: v.$bold;
+            color: v.$negro;
+            font-size: v.$h2;
+        }
+        a {
+            color:v.$negro;
+            text-decoration: underline;
+            font-size:v.$h4;
+        }
+    }
+    .timeline__contenedor {
+
+        .timeline__contenido {
+            max-width:1640px;
+            width:100%;
+            margin:2.5em auto 0;
+            padding: 0 0 6em;
+            column-gap:2em;
+            @include m.column-4;
+            @include m.tablet {
+                @include m.column-2;
+                gap:v.$espacio;
+            }
+            @include m.telefono {
+                @include m.column-1-grid;
+                gap:v.$espacio;
+            }
+
+            .timeline__galeria {
+                position: relative;
+                display: grid;
+                align-items: center;
+
+                img {
+                    border-radius: v.$border-radius;
+                }
+                .timeline__galeria__titulo {
+                    position: absolute;
+                    left: 15px;
+                    bottom: 15px;
+
+                    .galeria__titulo {
+                        color:v.$blanco;
+                        font-size:v.$h4;
+                        font-weight: 600;
+                        line-height: 0;
+                    }
+                    .galeria__fecha {
+                        color:v.$blanco;
+                        font-size:v.$h4;
+                        line-height: 0;
+                        font-weight: 100;
+                    }
+                }
+                .timeline__galeria__lateral {
+                    display: grid;
+                    width: calc(30% + 15px);
+                    height: auto;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 18px;
+                    position: absolute;
+                    right: 15px;
+                    padding: .6em;
+                    gap: .6em;
+
+                    .timeline__imagen, a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color:v.$blanco;
+
+                        span {
+                            position: absolute;
+                            font-size: 2.2em;
+                        }
+                        img {
+                            border-radius: v.$border-radius;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

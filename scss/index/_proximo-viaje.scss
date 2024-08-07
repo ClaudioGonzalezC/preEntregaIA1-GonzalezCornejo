@@ -1,0 +1,240 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Proximos viajes  ***/
+.proximo-viaje__anuncios {
+    max-width:1640px;
+    width:100%;
+    margin:2.5em auto 0;
+    column-gap:2em;
+    @include m.column-4;
+    @include m.tablet {
+        @include m.column-2;
+        gap:v.$espacio;
+    }
+    @include m.telefono {
+        display:none;
+        /* Carrusel */
+    }
+}
+.content__proximos-viajes {
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    max-width: 395px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+
+    .proximos-viajes-adv {
+        position: relative;
+        background: none;
+
+        .cucarda {
+            font-size: v.$h5;
+            padding: 8px 15px;
+            background-color: v.$blanco;
+            border-radius: v.$border-buttom;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: v.$negro;
+            margin: 15px 0px 0px 15px;
+
+            #contador {
+                text-align: center;
+            }
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width:105px;
+            margin: 15px 0px 0px 15px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .boton__anuncio {
+            font-size: 1.4em;
+            padding: 10px 20px;
+            background-color: v.$amarillo;
+            border-radius: v.$border-buttom;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: v.$negro;
+            margin: 0px 15px 20px 0px;
+        }
+        .boton__anuncio:hover {
+            background-color: v.$amarillo-hover;
+        }
+    }
+}
+.proximo-viaje__contenido {
+    max-width:1640px;
+    width:100%;
+    margin:6.5em auto;
+    column-gap:2em;
+ 
+    .proximo-viaje__titulos {
+
+        h2 {
+            letter-spacing: .07em;
+            font-weight: v.$bold;
+            color: v.$negro;
+            font-size: v.$h2;
+            padding-bottom:10px;
+        }
+    }
+    .proximo-viaje_content #contenedor {
+        max-width:1640px;
+        width:100%;
+        margin:2.5em auto 0;
+        gap:2em;
+        @include m.column-6;
+        @include m.tablet {
+            @include m.column-3;
+        }
+        @media (max-width:695px) {
+            @include m.column-2;
+        }
+        @include m.telefono-s {
+            @include m.column-1-grid;
+        }
+
+        .item {
+            position:relative;
+
+            a:hover {
+                -webkit-box-shadow: inset 0px 200px 60px -200px rgba(0,0,0,0.7);
+                -moz-box-shadow: inset 0px 200px 60px -200px rgba(0,0,0,0.7);
+                box-shadow: inset 0px 200px 60px -200px rgba(0,0,0,0.7);
+            }
+
+            img {
+                border-radius:v.$border-radius;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .item__info {
+                display:grid;
+                grid-template-columns: 3fr 1fr;
+                gap:1.5em;
+                position:absolute;
+                bottom:0;
+                left:0;
+                background:v.$transparencia-m;
+                width: 100%;
+                padding: 1.5em;
+                backdrop-filter: v.$blur;
+                border-radius:0 0 1.8em 1.8em;
+
+                .item__titulo {
+
+                    h3 {
+                        color:v.$blanco;
+                        font-size:1.7em;
+                        font-weight:v.$bold;
+                        margin:.2em 0;
+                        letter-spacing: .05em;
+                    }
+                    p {
+                        color:v.$blanco;
+                        font-size:v.$h5;
+                        font-weight:v.$regular;
+                        margin:.2em 0;
+
+                        span {
+
+                        }
+                    }
+                    h4 {
+                        color:v.$blanco;
+                        font-size:v.$h4;
+                        font-weight:v.$bold;
+                        margin:0;
+
+                        i {
+                            margin-right:.5em;
+                        }
+                    }
+                }
+                .item__progress {
+
+                    .progress-container {
+                        position: relative;
+                        width: 50px; /* Ajusta este valor al tamaño deseado */
+                        height: 50px; /* Ajusta este valor al tamaño deseado */
+                        margin-bottom: 20px;
+                    
+                        .progress-circle {
+                            transform: rotate(-90deg);
+
+                            .progress-background {
+                                fill: none;
+                                stroke: v.$verde-xl;
+                                stroke-width: 2;
+                            }
+                        }
+                        .progress-text {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 1.2em; /* Ajusta este valor al tamaño deseado */
+                            color: v.$verde-xl;;
+                        }
+                    }
+                    
+                    .progress-bar-1 {
+                        fill: none;
+                        stroke: v.$verde-xl;
+                        stroke-width: 5;
+                        stroke-dasharray: 82;
+                        stroke-dashoffset: 200;
+                        transition: stroke-dashoffset 0.5s;
+                    }
+                    .progress-bar-2 {
+                        fill: none;
+                        stroke: v.$verde-xl;
+                        stroke-width: 5;
+                        stroke-dasharray: 200;
+                        stroke-dashoffset: 127;
+                        transition: stroke-dashoffset 0.5s;
+                    }
+                }
+            }
+        }
+        .item-new {
+            border:1px solid v.$gris;
+            color:v.$gris-l;
+            border-radius: v.$border-radius;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            background-color: v.$gris-xs;
+            width: auto;
+            height: 244px;
+
+            a {
+                text-decoration: underline;
+                font-size:v.$h4;
+                color:v.$gris-l;
+            }
+        }
+        button {
+            background: transparent;
+            border: 0;
+            margin: 0 auto;
+
+            i {
+                font-size:3em;
+            }
+        }
+    }
+}

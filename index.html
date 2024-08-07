@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plani | Claudio González Cornejo</title>
+    <link rel="stylesheet" href="./scss/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <section class="header__contenido">
+                <div class="header__content">
+                    <div class="header__logo">
+                        <h1>Plani</h1>
+                    </div>
+                    <div class="header__configuracion">
+                        <!-- menu -->
+                        <nav class="menu">
+                            <ul class="menu__ul">
+                                <li class="menu__ul__li-perfil dropdown">
+                                    <div class="photo__perfil">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil.webp" alt="Perfil">
+                                        <div class="nombreUsuario"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>                        
+                        <!-- menu -->
+                    </div>
+                </div>
+            </section>
+            <section class="header__social">
+                <div class="header__content--social">
+                    <div class="header__social">
+                        <div>
+                            <a href="#">
+                                <div class="destinos__cards">
+                                    <img class="social--active" src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/social-1.webp" alt="Nora">
+                                    <p class="destinos__titulos">Nora</p>
+                                    <p class="destinos__lugares">Córdoba</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="destinos__cards">
+                                    <img class="social--active" src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/social-2.webp" alt="Frank">
+                                    <p class="destinos__titulos">Frank</p>
+                                    <p class="destinos__lugares">Copenhague</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="destinos__cards">
+                                    <img class="social--active" src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/social-3.webp" alt="Chema">
+                                    <p class="destinos__titulos">Chema</p>
+                                    <p class="destinos__lugares">Londres</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="destinos__cards">
+                                    <img class="social--active" src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/social-4.webp" alt="Eden">
+                                    <p class="destinos__titulos">Eden</p>
+                                    <p class="destinos__lugares">Pta. Arenas</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="destinos__cards">
+                                    <img class="social--active" src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/social-5.webp" alt="Dorrell">
+                                    <p class="destinos__titulos">Dorrell</p>
+                                    <p class="destinos__lugares">Limerick</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="header__busqueda container__input">
+                <div class="container">
+                    <h1>Pregunta a la IA: ¿Qué debo llevar para mi siguiente viaje?</h1>
+                    <button id="ask-button">Preguntar</button>
+                    <p id="answer"></p>
+                </div>
+                <!--
+                <div class="item1">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais" placeholder="País de destino">
+                </div>
+                <div class="item2">
+                    <label for="ciudad">Ciudad:</label>
+                    <select id="ciudad" name="ciudad" disabled></select>
+                </div>
+                <div>
+                    <input type="checkbox" id="seguro" name="seguro">
+                    <label for="seguro">Agregar seguro de viaje</label>
+                </div>
+                <div class="valor__adicional">
+                    <p>(valor adicional: $50,000)</p>
+                </div>
+                <div class="item3" id="resultado"></div>
+                <button id="continuarButton">Continuar</button>
+                -->
+            </section>                   
+            <section class="header__destinos">
+                <div class="header__titulos">
+                    <h2>Destinos Populares</h2>
+                </div>
+                <div class="header__destinos__cards">
+                    <section class="content__destinos__cards">
+                        <a href="#">
+                            <div class="content__destinos">
+                                <div class="destinos__cards">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/destino-japon.webp" alt="Japón">
+                                    <h3>Japón</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="content__destinos">
+                                <div class="destinos__cards">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/destino-eeuu.webp" alt="EE.UU.">
+                                    <h3>EE.UU.</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="content__destinos">
+                                <div class="destinos__cards">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/destino-sudafrica.webp" alt="Sudáfrica">
+                                    <h3>Sudáfrica</h3>
+                                </div>
+                            </div>
+                        </a>    
+                        <a href="#">
+                            <div class="content__destinos">
+                                <div class="destinos__cards">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/destino-argentina.webp" alt="Argentina">
+                                    <h3>Argentina</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="content__destinos">
+                                <div class="destinos__cards">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/destino-paisesbajos.webp" alt="Países Bajos">
+                                    <h3>Países Bajos</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="content__destinos">
+                                <div class="destinos__cards">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/destino-estonia.webp" alt="Estonia">
+                                    <h3>Estonia</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                </div>
+            </section>
+        </header>
+        <!-- Desktop -->
+        <!-- Desktop -->
+        <!-- Mobile -->
+        <!-- Mobile -->
+        <section class="section__proximo-viaje">
+            <div class="proximo-viaje__anuncios">
+                <div class="content__proximos-viajes">
+                    <a href="#">
+                        <div class="proximos-viajes-adv">
+                            <span class="cucarda">Tiempo limitado</span>
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/anuncio1-1.webp" alt="Anuncio 1">
+                            <a class="boton__anuncio" href="#">¡Lo quiero!</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="content__proximos-viajes">
+                    <a href="#">
+                        <div class="proximos-viajes-adv">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/anuncio2-1.webp" alt="Anuncio 2">
+                            <a class="boton__anuncio" href="#">Obtenlo ahora</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="content__proximos-viajes">
+                    <a href="#">
+                        <div class="proximos-viajes-adv">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/anuncio3-1.webp" alt="Anuncio 3">
+                            <a class="boton__anuncio" href="#">Invitar</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="content__proximos-viajes">
+                    <a href="#">
+                        <div class="proximos-viajes-adv">
+                            <span class="logo"><img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/logo-booking.webp" alt="Booking.com"></span>
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/anuncio4-1.webp" alt="Anuncio 4">
+                            <a class="boton__anuncio" href="#">Obtenlo ahora</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="proximo-viaje__contenido">
+                <div class="proximo-viaje__titulos">
+                    <h2>Mis próximos viajes</h2>
+                </div>
+                <section class="proximo-viaje_content">
+                    <div id="contenedor">
+                        <div class="item">
+                            <a href="#">
+                                <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/tower-bridge-londres.webp">
+                                <div class="item__info">
+                                    <div class="item__titulo">
+                                        <h3>Viaje Mayo - Junio</h3>
+                                        <p>por <span class="nombreUsuario"></span></p>
+                                        <h4>Londres</h4>
+                                    </div>
+                                    <div class="item__progress">
+                                        <div class="progress-container" data-percentage="40" data-id="1">
+                                            <svg class="progress-circle" width="50" height="50">
+                                                <circle class="progress-background" cx="25" cy="25" r="20"/>
+                                                <circle class="progress-bar-1" cx="25" cy="25" r="20"/>
+                                            </svg>
+                                            <div class="progress-text" id="progressPercent">40%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/playa-grande-villarrica.webp">
+                                <div class="item__info">
+                                    <div class="item__titulo">
+                                        <h3>Viaje Marzo</h3>
+                                        <p>por <span class="nombreUsuario"></span></p>
+                                        <h4>Villarrica</h4>
+                                    </div>
+                                    <div class="item__progress">
+                                        <div class="progress-container" data-percentage="60" data-id="2">
+                                            <svg class="progress-circle" width="50" height="50">
+                                                <circle class="progress-background" cx="25" cy="25" r="20"/>
+                                                <circle class="progress-bar-2" cx="25" cy="25" r="20"/>
+                                            </svg>
+                                            <div class="progress-text" id="progressPercent">60%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="section__stories" id="section__stories">
+            <div class="stories__titulos">
+                <h2>Historias</h2>
+            </div>
+            <div class="stories__contenedor">
+                <div class="stories__contenido">
+                    <div class="stories__content">
+                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/storie-1.webp" alt="Storie">
+                        <div class="stories__info">
+                            <div class="stories__arriba">
+                                <div class="stories__titulo">
+                                    <a href="#">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil-1.webp" alt="foto de perfil">
+                                    </a>
+                                    <div class="stories__de">
+                                        <h3>Sicas Zandar</h3>
+                                        <h4>Paris, Francia</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__abajo">
+                                <p>Bonjour Paris ❤️💍</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories__content">
+                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/storie-2.webp" alt="Storie">
+                        <div class="stories__info">
+                            <div class="stories__arriba">
+                                <div class="stories__titulo">
+                                    <a href="#">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil-2.webp" alt="foto de perfil">
+                                    </a>
+                                    <div class="stories__de">
+                                        <h3>Samuel Vergara</h3>
+                                        <h4>Petra, Jordania</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__abajo">
+                                <p>Tratando de encontrar el Santo Grial</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories__content">
+                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/storie-3.webp" alt="Storie">
+                        <div class="stories__info">
+                            <div class="stories__arriba">
+                                <div class="stories__titulo">
+                                    <a href="#">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil-3.webp" alt="foto de perfil">
+                                    </a>   
+                                    <div class="stories__de">
+                                        <h3>Jo San Diego</h3>
+                                        <h4>San Francisco, EE.UU.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__abajo">
+                                <p>8km 🏃</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories__content">
+                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/storie-4.webp" alt="Storie">
+                        <div class="stories__info">
+                            <div class="stories__arriba">
+                                <div class="stories__titulo">
+                                    <a href="#">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil-4.webp" alt="foto de perfil">
+                                    </a>
+                                    <div class="stories__de">
+                                        <h3>Mauro Lima</h3>
+                                        <h4>Cartagena, Colombia</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__abajo">
+                                <p>Paparazzeando!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories__content">
+                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/storie-5.webp" alt="Storie">
+                        <div class="stories__info">
+                            <div class="stories__arriba">
+                                <div class="stories__titulo">
+                                    <a href="#">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil-5.webp" alt="foto de perfil">
+                                    </a>
+                                    <div class="stories__de">
+                                        <h3>Jacek Janiczak</h3>
+                                        <h4>Dubrovnik, Croacia</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__abajo">
+                                <p>I love U Croatia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories__content">
+                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/storie-6.webp" alt="Storie">
+                        <div class="stories__info">
+                            <div class="stories__arriba">
+                                <div class="stories__titulo">
+                                    <a href="#">
+                                        <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/perfil-6.webp" alt="foto de perfil">
+                                    </a>
+                                    <div class="stories__de">
+                                        <h3>Fred Moon</h3>
+                                        <h4>Bari, Italia</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__abajo">
+                                <p>😏</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__timeline">
+            <div class="timeline__titulos">
+                <h2>Mi línea de tiempo</h2>
+                <a href="#">Mostrar todo</a>
+            </div>
+            <div class="timeline__contenedor">
+                <section class="timeline__contenido">
+                    <div class="timeline__galeria">
+                        <div class="timeline__galeria__titulo">
+                            <p class="galeria__titulo">Villarrica, Chile</p>
+                            <p class="galeria__fecha">2024</p>
+                        </div>
+                        <div class="timeline__galeria__lateral">
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-villarrica-2.webp" alt="Villarrica">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-villarrica-3.webp" alt="Villarrica">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <span>+10</span>
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-villarrica-4.webp" alt="Villarrica">
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-villarrica-1.webp" alt="Villarrica">
+                        </a>
+                    </div>
+                    <div class="timeline__galeria">
+                        <div class="timeline__galeria__titulo">
+                            <p class="galeria__titulo">Freire, Chile</p>
+                            <p class="galeria__fecha">2023</p>
+                        </div>
+                        <div class="timeline__galeria__lateral">
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-freire-2.webp" alt="Freire">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-freire-3.webp" alt="Freire">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <span>+10</span>
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-freire-4.webp" alt="Freire">
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-freire-1.webp" alt="Freire">
+                        </a>
+                    </div>
+                    <div class="timeline__galeria">
+                        <div class="timeline__galeria__titulo">
+                            <p class="galeria__titulo">Londres, Inglaterra</p>
+                            <p class="galeria__fecha">2023</p>
+                        </div>
+                        <div class="timeline__galeria__lateral">
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-londres-2.webp" alt="Londres">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-londres-3.webp" alt="Londres">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <span>+10</span>
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-londres-4.webp" alt="Londres">
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-londres-1.webp" alt="Londres">
+                        </a>
+                    </div>
+                    <div class="timeline__galeria">
+                        <div class="timeline__galeria__titulo">
+                            <p class="galeria__titulo">Paris, Francia</p>
+                            <p class="galeria__fecha">2023</p>
+                        </div>
+                        <div class="timeline__galeria__lateral">
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-paris-2.webp" alt="Paris">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-paris-3.webp" alt="Paris">
+                                </a>
+                            </div>
+                            <div class="timeline__imagen">
+                                <a href="#">
+                                    <span>+10</span>
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-paris-4.webp" alt="Paris">
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/timeline-paris-1.webp" alt="Paris">
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="equipaje-presupuesto">
+            <div class="contenedor__equipaje-presupuesto">
+                <div class="contenedor__equipaje">
+                    <div class="equipaje__titulos">
+                        <h2>Mis equipajes</h2>
+                        <a href="#">Mostrar todo</a>
+                    </div>
+                    <div class="contenido__equipaje">
+                        <section class="equipaje">
+                            <div class="equipaje__primer">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/fondo-maleta.webp" alt="maleta">
+                                    <div class="equipaje__info">
+                                        <h3>Equipaje 2023 LPL</h3>
+                                        <div class="equipaje__tag">
+                                            <span>Bolso</span>
+                                            <span>Mano</span>
+                                            <span>Bodega</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="equipaje__segundo">
+                                <a href="#">
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/fondo-maleta.webp" alt="maleta">
+                                    <div class="equipaje__info">
+                                        <h3>Equipaje 2020 Copenhague</h3>
+                                        <div class="equipaje__tag">
+                                            <span>Bolso</span>
+                                            <span>Mano</span>
+                                            <span>Bodega</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="contenedor__presupuesto">
+                    <div class="presupuesto__titulos">
+                        <h2>Mis presupuestos</h2>
+                        <a href="#">Mostrar todo</a>
+                    </div>
+                    <div class="contenido__presupuesto">
+                        <section class="presupuesto">
+                            <a href="#">
+                                <div class="presupuesto__primer">
+                                    <div class="presupuesto__info">
+                                        <h3>Presupuesto 2023 LPL</h3>
+                                    </div>
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/fondo-billetera.webp" alt="billetera">
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="presupuesto__segundo">
+                                    <div class="presupuesto__info">
+                                        <h3>Presupuesto 2020 Copenhague</h3>
+                                    </div>
+                                    <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/fondo-billetera.webp" alt="billetera">
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__ofertas">
+            <div class="ofertas__titulos">
+                <h2>Mejores Ofertas</h2>
+            </div>
+            <section class="contenido__ofertas">
+                <div class="contenedor__ofertas">
+                    <div class="ofertas__content">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/ofertas-paris.webp" alt="mejores ofertas">
+                        </a>
+                        <div class="ofertas__informacion">
+                            <div class="ofertas__datos">
+                                <p class="ofertas__titulo">Paris, Francia</p>
+                                <div class="container__fecha">
+                                    <p class="ofertas__fechas">Ida y Vuelta</p>
+                                    <p class="ofertas__fechas">12 Abr - 20 Abr</p>
+                                </div>
+                            </div>
+                            <div class="ofertas__precio">
+                                <p class="descuento hidden">10%</p>
+                                <p class="ofertas__total">USD <span>$18,000.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ofertas__content">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/ofertas-nuevayork.webp" alt="mejores ofertas">
+                        </a>
+                        <div class="ofertas__informacion">
+                            <div class="ofertas__datos">
+                                <p class="ofertas__titulo">Nueva York, EE.UU.</p>
+                                <div class="container__fecha">
+                                    <p class="ofertas__fechas">Ida y Vuelta</p>
+                                    <p class="ofertas__fechas">12 Abr - 20 Abr</p>
+                                </div>
+                            </div>
+                            <div class="ofertas__precio">
+                                <p class="descuento hidden">10%</p>
+                                <p class="ofertas__total">USD <span>$25,000.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ofertas__content">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/ofertas-osaka.webp" alt="mejores ofertas">
+                        </a>
+                        <div class="ofertas__informacion">
+                            <div class="ofertas__datos">
+                                <p class="ofertas__titulo">Osaka, Japon</p>
+                                <div class="container__fecha">
+                                    <p class="ofertas__fechas">Ida y Vuelta</p>
+                                    <p class="ofertas__fechas">12 Abr - 20 Abr</p>
+                                </div>
+                            </div>
+                            <div class="ofertas__precio">
+                                <p class="descuento hidden">10%</p>
+                                <p class="ofertas__total">USD <span>$24,000.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ofertas__content">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/ofertas-barcelona.webp" alt="mejores ofertas">
+                        </a>
+                        <div class="ofertas__informacion">
+                            <div class="ofertas__datos">
+                                <p class="ofertas__titulo">Barcelona, España</p>
+                                <div class="container__fecha">
+                                    <p class="ofertas__fechas">Ida y Vuelta</p>
+                                    <p class="ofertas__fechas">12 Abr - 20 Abr</p>
+                                </div>
+                            </div>
+                            <div class="ofertas__precio">
+                                <p class="descuento hidden">10%</p>
+                                <p class="ofertas__total">USD <span>$17,000.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ofertas__content">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/ofertas-tailandia.webp" alt="mejores ofertas">
+                        </a>
+                        <div class="ofertas__informacion">
+                            <div class="ofertas__datos">
+                                <p class="ofertas__titulo">Trat, Tailandia</p>
+                                <div class="container__fecha">
+                                    <p class="ofertas__fechas">Ida y Vuelta</p>
+                                    <p class="ofertas__fechas">12 Abr - 20 Abr</p>
+                                </div>
+                            </div>
+                            <div class="ofertas__precio">
+                                <p class="descuento hidden">10%</p>
+                                <p class="ofertas__total">USD <span>$28,000.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ofertas__content">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/ofertas-londres.webp" alt="mejores ofertas">
+                        </a>
+                        <div class="ofertas__informacion">
+                            <div class="ofertas__datos">
+                                <p class="ofertas__titulo">Londres, Inglaterra</p>
+                                <div class="container__fecha">
+                                    <p class="ofertas__fechas">Ida y Vuelta</p>
+                                    <p class="ofertas__fechas">12 Abr - 20 Abr</p>
+                                </div>
+                            </div>
+                            <div class="ofertas__precio">
+                                <p class="descuento hidden">10%</p>
+                                <p class="ofertas__total">USD <span>$20,000.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="section__mini__blog">
+            <div class="contenido__mini__blog">
+                <div class="content__mini__blog">
+                    <a href="#">
+                        <div class="mini__blog__card">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/mini-blog-1.webp" alt="Anuncio 2">
+                            <a class="boton__card" href="#">Conoce más aquí</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="content__mini__blog">
+                    <a href="#">
+                        <div class="mini__blog__card">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/mini-blog-2.webp" alt="Anuncio 2">
+                            <a class="boton__card" href="#">Descúbrelo</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="content__mini__blog">
+                    <a href="#">
+                        <div class="mini__blog__card">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/mini-blog-3.webp" alt="Anuncio 2">
+                            <a class="boton__card" href="#">Conócelos aquí</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="content__mini__blog">
+                    <a href="#">
+                        <div class="mini__blog__card">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/mini-blog-4.webp" alt="Anuncio 2">
+                            <a class="boton__card" href="#">Conócelos aquí</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <section class="footer__container">
+                <div class="footer__travelease">
+                    <h3>Plani</h3>
+                    <p><a href="#">Inicio</a></p>
+                    <p><a href="#">Acerca de Plani</a></p>
+                    <p><a href="#">Prepara tu viaje</a></p>
+                    <p><a href="#">Mis viajes</a></p>  
+                    <p><a href="#">Estado de vuelo</a></p>  
+                    <p><a href="#">Check-in</a></p>  
+                    <p><a href="#">Destinos</a></p>  
+                    <p><a href="#">PlaniWallet</a></p>                    
+                    <p><a href="#">Crea tu cuenta</a></p>  
+                    <p><a href="#">Centro de ayuda</a></p>
+                </div>
+                <div class="footer__informacion">
+                    <h3>Información Legal</h3>
+                    <p><a href="#">Devolución de tasas de embarque</a></p>
+                    <p><a href="#">Condiciones de contrato de transporte</a></p>
+                    <p><a href="#">Cargos por servicio</a></p>
+                    <p><a href="#">Políticas de privacidad y seguridad</a></p>  
+                    <p><a href="#">Términos de uso</a></p>  
+                    <p><a href="#">Conoce tus derechos</a></p>  
+                </div>
+                <div class="footer__portales">
+                    <h3>Portales asociados</h3>
+                    <p><a href="#">Staff Plani</a></p>
+                    <p><a href="#">Trabaja con nosotros</a></p>
+                    <p><a href="#">Relación con inversionistas</a></p>
+                    <p><a href="#">Chile compra</a></p>  
+                    <p><a href="#">Plani Trade (Portal Agencias de Viajes)</a></p>  
+                    <p><a href="#">Academia de Ciencias Aeronáuticas</a></p>  
+                    <p><a href="#">Chile va contigo</a></p>  
+                </div>
+                <div class="footer__contacto">
+                    <h3>Contacta con nosotros</h3>
+                    <div class="footer__social">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/x-twitter.webp" alt="x, antes twitter">
+                        </a>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/instagram.webp" alt="instagram">
+                        </a>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/youtube.webp" alt="youtuber">
+                        </a>
+                    </div>
+                    <h3>Nuestra app en tu teléfono</h3>
+                    <div class="footer__descargas">
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/googleplay.webp" alt="android">
+                        </a>
+                        <a href="#">
+                            <img src="https://claudiogonzalezc.github.io/Plani-GonzalezCornejo/assets/images/appstore.webp" alt="ios">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section class="footer__container--legal">
+                <div class="footer__legal">
+                    <span>Plani</span>
+                    <p>© 2024 Plani Latam. Av. Presidente Riesco 5711, Las Condes, Santiago de Chile. 600 526 2000</p>
+                </div>
+            </section>
+        </footer>
+    </div>   
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

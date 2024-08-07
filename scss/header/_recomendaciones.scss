@@ -1,0 +1,56 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Recomendaciones ***/
+.header__destinos {
+    margin-bottom:3.5em;
+
+    .header__titulos h2 {
+        letter-spacing: .07em;
+        font-weight: v.$bold;
+        color: v.$blanco;
+        font-size: v.$h2;
+        padding-bottom:10px;
+    }
+}
+.header__destinos__cards {
+
+    .content__destinos__cards {
+        @include m.column-6;
+        gap:1.5em;
+        @include m.tablet {
+            @include m.column-3;
+        }
+        @media (max-width:675px) {
+            @include m.column-2;
+        }
+        @include m.telefono-s {
+            @include m.column-2;
+        }
+
+        .content__destinos {
+            display:flex;
+            align-items: center;
+            border-radius: v.$border-radius;
+            background-color: v.$transparencia;
+            padding:10px;
+            backdrop-filter: v.$blur;
+
+            .destinos__cards {
+                display:flex;
+                column-gap:2em;
+                align-items: center;
+
+                img {
+                    max-width:5.8em;
+                    border-radius: v.$border-radius-mini;
+                }
+                h3 {
+                    font-size: v.$h3;
+                    color: v.$negro;
+                    font-weight: v.$bold;
+                }
+            }
+        }
+    }
+}

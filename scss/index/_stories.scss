@@ -1,0 +1,160 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Stories  ***/
+.section__stories {
+
+    .stories__titulos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width:1640px;
+        width:100%;
+        margin:6.5em auto 0;
+        column-gap:2em;
+
+        h2 {
+            letter-spacing: .07em;
+            font-weight: v.$bold;
+            color: v.$negro;
+            font-size: v.$h2;
+            padding-bottom:10px;
+        }
+        button i {
+            font-size:3em;
+        }
+    }
+    .stories__contenedor {
+        border-bottom: .14em solid v.$blanco-hover;
+        padding-bottom: 6em;
+        max-width:1640px;
+        width:100%;
+        margin:0 auto .4em;
+
+        .stories__contenido {
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            max-width:1640px;
+            width:100%;
+            margin:0 auto 1.6em;
+            gap:v.$espacio;
+            @include m.tablet {
+                @include m.column-3;
+            }
+            @media (max-width:620px) {
+                @include m.column-2;
+            }
+            @include m.telefono-s {
+                @include m.column-1-grid;
+            }
+
+            .stories__content {
+                border-radius:v.$border-radius;
+                position: relative;
+
+                img {
+                }
+                .stories__info {
+                    position:absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    align-content: space-between;
+                    padding: 2.5em 1.5em;                                
+                    
+                    .stories__arriba {
+                        display:block;
+                        color:v.$blanco;
+
+                        .stories__titulo {
+                            display: flex;
+                            gap: 1em;
+                            align-items: flex-start;
+                            justify-content: space-between;
+
+                            img {
+                                max-width:30px;
+                                height: 100%;
+                                border:1px solid v.$blanco;
+                                border-radius: v.$border-radius;
+                            }
+                            .stories__de {
+                                h3 {
+                                    font-size:v.$h4;
+                                    font-weight:v.$bold;
+                                    margin:0;
+                                    letter-spacing: 1.2px;
+                                }
+                                h4 {
+                                    font-size:v.$h4;
+                                    font-weight:v.$regular;
+                                    margin:0;
+                                    letter-spacing: 1.2px;
+                                }
+                            }
+                            .favorito {
+                                width: 25px;
+                                height: 25px;
+                                background-image: url('/src/img/me-gusta.webp'); /* Icono transparente por defecto */
+                                background-size: cover;
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                            .activado .favorito {
+                                background-image: url('/src/img/me-gusta-active.webp'); /* Icono blanco cuando está activo */
+                            }
+                        }
+                    }
+                    .stories__abajo {
+                        display:grid;
+                        align-items: end;
+                        justify-content: start;
+                        color:v.$blanco;                        
+                        
+                        p {
+                            font-size:v.$h3;
+                            letter-spacing: 1.2px;
+                        }
+                    }
+                }
+            }
+        }
+        .stories__ocultas {
+            display: none;
+        }
+    }
+    .stories__ver__mas {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        margin-top: -3.2em;
+        
+
+        #ver-mas-btn {
+            border: .09em solid v.$blanco-hover;
+            border-radius: v.$border-buttom;
+            background-color: v.$blanco;
+            padding:15px 115px;
+            font-size:v.$h3;
+            @media (max-width:390px) {
+                padding:15px 75px;
+            }
+        }
+        #ver-mas-btn:hover {
+            background-color: v.$blanco-hover;
+        }
+    }
+    button {
+        padding:0;
+        border:0;
+        background:none;
+        color:v.$negro;
+
+        .fas {
+            margin-left:1em;
+            color:v.$negro;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "user_id": 1,
+    "name": "Claudio",
+    "preferences": {
+        "clothing": ["ropa cómoda", "zapatos adecuados para caminar", "chaqueta ligera"],
+        "items": ["artículos de higiene personal", "botella de agua reutilizable"]
+    }
+}

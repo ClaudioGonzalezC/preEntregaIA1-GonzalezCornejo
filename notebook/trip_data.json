@@ -1,0 +1,22 @@
+{
+    "trips": [
+        {
+            "trip_id": 1,
+            "destination": "playa",
+            "used_items": ["toalla", "sandalias"],
+            "unused_items": ["ropa de abrigo"]
+        },
+        {
+            "trip_id": 2,
+            "destination": "montaña",
+            "used_items": ["chaqueta", "botas"],
+            "unused_items": ["ropa ligera"]
+        },
+        {
+            "trip_id": 3,
+            "destination": "Londres",
+            "used_items": ["Pantalón", "Chaqueta"],
+            "unused_items": ["Chaleco"]
+        }
+    ]
+}

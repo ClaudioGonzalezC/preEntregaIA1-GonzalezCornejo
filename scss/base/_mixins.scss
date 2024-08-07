@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+//Mixins
+@mixin column-6 {
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+}
+@mixin column-5 {
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+}
+@mixin column-4 {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+}
+@mixin column-3 {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+}
+@mixin column-2 {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+}
+@mixin column-1-grid {
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:v.$espacio;
+}
+@mixin column-1 {
+    display:block;
+}
+@mixin telefono-s {
+    @media (max-width: v.$telefono-s) {
+        @content;
+    }
+}
+@mixin telefono {
+    @media (max-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-width: v.$desktop) {
+        @content;
+    }
+}

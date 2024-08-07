@@ -1,0 +1,91 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/*** Footer ***/
+footer {
+    background-color: #000;
+
+    .footer__container {
+        max-width:1640px;
+        width:100%;
+        margin:2.5em auto 0;
+        padding: 6em 0;
+        column-gap:2em;
+        @include m.column-4;
+        @include m.tablet {
+            @include m.column-2;
+            padding:5em 3em;
+        }
+        @include m.telefono {
+            @include m.column-1;
+            padding:4em 2em;
+        }
+        h3, a {
+            color:v.$blanco;
+            font-size:v.$h3;
+        }
+        
+        a {
+            font-weight: lighter;
+        }
+
+        .footer__contacto {
+
+            .footer__social {
+                @include m.column-3;
+                column-gap: 2em;
+                max-width: 190px;
+
+                a img {
+                    width:100%;
+                    max-width:2.8em;
+                }
+            }
+        }
+        .footer__descargas {
+            @include m.column-2;
+            column-gap: 2em;
+            max-width: 315px;
+            @include m.telefono {
+                @include m.column-1-grid;
+            }
+
+            a img {
+                max-height: 50px;
+                width: auto;
+            }
+        }
+    }
+    .footer__container--legal {
+        max-width:1640px;
+        width:100%;
+        margin:2.5em auto 0;
+        padding:0 0 2em;
+        column-gap:2em;
+
+        .footer__legal {
+            color:v.$blanco;
+            display: flex;
+            align-items: center;
+            column-gap: 15px;
+            @include m.tablet {
+                @include m.column-1;
+                padding:0em 3em;
+            }
+            @include m.telefono {
+                padding:0em 2em;
+            }
+
+            span {
+                font-size:3em;
+            }
+            p {
+                font-size:v.$h3;
+                font-weight: lighter;
+            }
+        }
+    }
+    .footer__container div[class^="footer__"] {
+        padding:1em 0;
+    }
+}
